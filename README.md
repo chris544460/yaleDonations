@@ -67,4 +67,20 @@ First, I try to explore the data with naive, introductory plots:
 > We don't see one class spending too much time in the _Mass Affluent and Lowest Participation Rate_ quadrant. But, at some point, many classes have spent some time in this quadrant.
 - Gifts by Year for each class, normalized by the number of alumni in that class / participation rate of the class
 
+Ok, that was the initial exploration. Now, let's try to explore the data with more useful plots (or at least potentially more useful plots from a statistical perspective).
 
+## Statistical Exploration
+
+In `dataExplorer.R`, I plot a histogram of the data for all years available in the `yaleDonations.csv` dataset (from 2012 to 2020).
+
+<!-- paste image with path: plots_dataExploration/plot9.png -->
+![Plot 9](/plots_dataExploration/plot9.png)
+
+This is a histogram of all annual gifts. That is, we are considering gifts given by all classes for all years in the dataset. 
+
+We see that the distribution of annual gifts is right skewed. This is expected since we can expect higher-value gifts to be less frequent than lower-value gifts. 
+
+
+In `dataExplorer.R`, I also plot a histogram of the differenced series of the Annual Gifts. That is, I plot a histogram of the differences between consecutive years' gifts. I obtain the histogram below. This histogram tells us that the differenced series is approximately normally distributed (i.e. the value of the time series has gone up and down around a mean value over time. However, the distribution is not exactly normal. It is slightly right skewed. 
+<!-- paste image with path: plots_dataExploration/plot10.png -->
+![Plot 10](/plots_dataExploration/plot10.png)
