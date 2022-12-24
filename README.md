@@ -7,10 +7,12 @@ The goal of this project is to:
 - make recommendations to the development office about how to improve the donations
 - develop a model to predict the amount of a donation
 
-<!-- add a gif image with image address: https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fmagnifying-glass&psig=AOvVaw3QG9uAm-Fnb7_UecRkxHf3&ust=1671954255901000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPjM447hkfwCFQAAAAAdAAAAABAD -->
+<!-- add a gif image with image address with size 5x5: https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fmagnifying-glass&psig=AOvVaw3QG9uAm-Fnb7_UecRkxHf3&ust=1671954255901000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPjM447hkfwCFQAAAAAdAAAAABAD-->
 ![Magnifying Glass](https://media2.giphy.com/media/42wQXwITfQbDGKqUP7/giphy.gif)
 
-hello
+
+
+
 
 ## Preliminary Steps
 
@@ -24,7 +26,16 @@ _Therefore, after you have cleaned the data, you should run `wrangler_dataExplor
 
 ## Data Exploration
 
-
-
 ### Initial Exploration
+
+I do the initial data exploration in `visualizer_dataExploration.ipynb`. This notebook reads the dataset `yaleDonations.csv` from the folder `processedData`. This notebook does some initial exploration of the data. 
+
+Recall that the first goal of this project is to explore the data and find interesting insights about the donations. This notebook attempts to do this. 
+
+First, I try to explore the data with naive, introductory plots:
+- Gifts by Year for each class
+<!-- paste image with path: plots_dataExploration/plot1.png -->
+![Plot 1](plots_dataExploration/plot1.png)
+- Gifts by Year for each class, normalized by the number of alumni in that class / participation rate of the class
+
 
