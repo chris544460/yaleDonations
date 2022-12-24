@@ -39,7 +39,7 @@ First, I try to explore the data with naive, introductory plots:
 - Gifts against Years since Graduation for each class (from 2012 to 2020 since I cannot find data before 2012)
 <!-- paste image with path: plots_dataExploration/plot2.png -->
 ![Plot 2](/plots_dataExploration/plot2.png)
-
+> I find by eye, generally, a positive correlation between years since graduation and gift amounts. This is expected. However, it might be interesting to see later, in the analysis, how strong this is / if it is a statistically significant effect.
 - Gifts by Year for each class, normalized by the number of alumni in that class / participation rate of the class
 
 
