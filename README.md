@@ -46,9 +46,23 @@ First, I try to explore the data with naive, introductory plots:
 - Participation Rate against Years since Graduation for each class (from 2012 to 2020 since I cannot find data before 2012)
 <!-- paste image with path: plots_dataExploration/plot4.png -->
 ![Plot 4](/plots_dataExploration/plot4.png)
-- Quadrant-based Plot of Gifts against Participation Rate for each class
+- Quadrant-based Plot of Gifts against Participation Rate for each class. The quadrants of the plot were defined as follows: 
+    - Along x axis
+        - Low Participation Rate: 0 < Participation Rate < 0.25
+        - Medium Participation Rate: 0.25 < Participation Rate < 0.50
+        - High Participation Rate: 0.50 < Participation Rate < 0.75
+        - Very High Participation Rate: 0.75 < Participation Rate < 1.00
+    - Along y axis
+        - Mass Affluent: 0 < Gift < 100000
+        - Affluent: 100000 < Gift < 500000
+        - High Net Worth: 500000 < Gift < 1250000
 <!-- paste image with path: plots_dataExploration/plot6.gif -->
 ![Plot 6](/plots_dataExploration/plot6.gif)
+- Having taken a look at the graph below, you might see that classes do not remain in the same quadrant over time. We might want to know which classes spend the most time in which quadrant. An example of this is asking: "Which class spent the most time in the _Affluent and Highest Participation Rate_ quadrant?" or "Which class spent the most time in the _Mass Affluent and Lowest Participation Rate_ quadrant?"
+<!-- paste image with path: plots_dataExploration/plot7.png -->
+![Plot 7](/plots_dataExploration/plot7.png)
+<!-- paste image with path: plots_dataExploration/plot8.png -->
+![Plot 8](/plots_dataExploration/plot8.png)
 - Gifts by Year for each class, normalized by the number of alumni in that class / participation rate of the class
 
 
