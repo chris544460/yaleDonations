@@ -61,6 +61,7 @@ First, I try to explore the data with naive, introductory plots:
 - Having taken a look at the graph below, you might see that classes do not remain in the same quadrant over time. We might want to know which classes spend the most time in which quadrant. An example of this is asking: "Which class spent the most time in the _Affluent and Highest Participation Rate_ quadrant?" or "Which class spent the most time in the _Mass Affluent and Lowest Participation Rate_ quadrant?"
 <!-- paste image with path: plots_dataExploration/plot7.png -->
 ![Plot 7](/plots_dataExploration/plot7.png)
+> We find that the 1952 class is a great class donations-wise!
 <!-- paste image with path: plots_dataExploration/plot8.png -->
 ![Plot 8](/plots_dataExploration/plot8.png)
 - Gifts by Year for each class, normalized by the number of alumni in that class / participation rate of the class
