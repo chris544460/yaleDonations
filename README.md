@@ -64,6 +64,7 @@ First, I try to explore the data with naive, introductory plots:
 > We find that the 1952 class is a great class donations-wise!
 <!-- paste image with path: plots_dataExploration/plot8.png -->
 ![Plot 8](/plots_dataExploration/plot8.png)
+> We don't see one class spending too much time in the _Mass Affluent and Lowest Participation Rate_ quadrant. But, at some point, many classes have spent some time in this quadrant.
 - Gifts by Year for each class, normalized by the number of alumni in that class / participation rate of the class
 
 
