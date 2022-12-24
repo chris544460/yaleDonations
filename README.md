@@ -36,6 +36,10 @@ First, I try to explore the data with naive, introductory plots:
 - Gifts by Year for each class
 <!-- paste image with path: plots_dataExploration/plot1.png -->
 ![Plot 1](/plots_dataExploration/plot1.png)
+- Gifts against Years since Graduation for each class (from 2012 to 2020 since I cannot find data before 2012)
+<!-- paste image with path: plots_dataExploration/plot2.png -->
+![Plot 2](/plots_dataExploration/plot2.png)
+
 - Gifts by Year for each class, normalized by the number of alumni in that class / participation rate of the class
 
 
