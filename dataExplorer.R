@@ -60,3 +60,5 @@ plot(df2$Annual_Gifts_1Y_difference_previous, df2$Annual_Gifts_1Y_difference,
      ylab = "Annual Gifts 1 Year Difference ", 
      col = "blue", 
      pch = 20)
+
+
