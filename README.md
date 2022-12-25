@@ -71,6 +71,8 @@ Ok, that was the initial exploration. Now, let's try to explore the data with mo
 
 ## Statistical Exploration
 
+### Time Series Analysis
+
 In `dataExplorer.R`, I plot a histogram of the data for all years available in the `yaleDonations.csv` dataset (from 2012 to 2020).
 
 <!-- paste image with path: plots_dataExploration/plot9.png -->
@@ -80,7 +82,8 @@ This is a histogram of all annual gifts. That is, we are considering gifts given
 
 We see that the distribution of annual gifts is right skewed. This is expected since we can expect higher-value gifts to be less frequent than lower-value gifts. 
 
-
 In `dataExplorer.R`, I also plot a histogram of the differenced series of the Annual Gifts. That is, I plot a histogram of the differences between consecutive years' gifts. I obtain the histogram below. This histogram tells us that the differenced series is approximately normally distributed (i.e. the value of the time series has gone up and down around a mean value over time. However, the distribution is not exactly normal. It is slightly right skewed. 
 <!-- paste image with path: plots_dataExploration/plot10.png -->
 ![Plot 10](/plots_dataExploration/plot10.png)
+
+We might ask ourselves, how can we predict future Annual Gifts changes? A naive approach would be to predict a year's Annual Gifts changes using the previous year's Annual Gifts changes. I plot a scatterplot of the previous year's Annual Gifts changes against the current year's Annual Gifts changes. I obtain the scatterplot below.
