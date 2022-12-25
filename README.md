@@ -71,7 +71,7 @@ Ok, that was the initial exploration. Now, let's try to explore the data with mo
 
 ## Statistical Exploration
 
-### Time Series Analysis
+### Distribution of Annual Gifts
 
 In `dataExplorer.R`, I plot a histogram of the data for all years available in the `yaleDonations.csv` dataset (from 2012 to 2020).
 
@@ -86,6 +86,8 @@ In `dataExplorer.R`, I also plot a histogram of the differenced series of the An
 <!-- paste image with path: plots_dataExploration/plot10.png -->
 ![Plot 10](/plots_dataExploration/plot10.png)
 
+### Predicting Annual Gifts Changes and Annual Gifts
+
 We might ask ourselves, how can we predict future Annual Gifts changes? A naive approach would be to predict a year's Annual Gifts changes using the previous year's Annual Gifts changes. I plot a scatterplot of the previous year's Annual Gifts changes against the current year's Annual Gifts changes. I obtain the scatterplot below. I do this in `dataExplorer.R`.
 
 <!-- paste image with path: plots_dataExploration/plot11.png -->
@@ -99,4 +101,46 @@ We might also ask ourselves, how can we predict future Annual Gifts? A naive app
 ![Plot 12](/plots_dataExploration/plot12.png)
 
 > To discuss this plot, I will divide it into two regions: the region where the previous year's Annual Gifts are less than 400K and the region where the previous year's Annual Gifts are greater than 400K. In the region where the previous year's Annual Gifts are less than 400K, we see a positive correlation between Annual Gifts for the Previous Year and Annual Gifts (in the next year). We also find that the variance looks constant. I find that a y=x line may fit the model well. This would support the earlier hypothesis that "the story is one where the Annual Gifts are at their mean / trend level, and if they enjoy a large increase, they will correct for this increase in the next year". Why? This hypothesis is about the Annual Gifts being at their mean / trend level. If the Annual Gifts are at their mean / trend level, we would expect the Annual Gifts to be around the same value in the next year. In the region where the previous year's Annual Gifts are greater than 400K, we see a weaker positive correlation between Annual Gifts for the Previous Year and Annual Gifts (in the next year) and greater variance. Thus, it is more uncertain to predict the Annual Gifts in the next year. This may imply that, if an annual gift is very high, it is more difficult to predict the next year's Annual Gifts. This may be because the Annual Gifts are not at their mean / trend level. If the Annual Gifts are not at their mean / trend level, we would expect the Annual Gifts to be different in the next year. However, since the correlation seems to remain positive (implying that an increase in the previous year's Annual Gifts is associated with an increase in the next year's Annual Gifts), this may contradict the earlier hypothesis. Why? The earlier hypothesis would expect to see a decrease (because of corrections) at higher values of the previous year's Annual Gifts. But this is not what we are observing.
+
+### Exloring Stationarity (for Total Annual Gifts)
+
+We might ask ourselves, is are the total annual gifts stationary? To do so, we can do a Dickey-Fuller test. I do this in `dataExplorer.R`. However, we have a small range of years in the dataset (from 2012 to 2020), so the results are likely not to be reliable. So take the results from the Dickey-Fuller test with a grain of salt. I obtain the results below.
+
+```
+        Augmented Dickey-Fuller Test
+
+data:  df3$Total_Annual_Gifts
+Dickey-Fuller = -2.3667, Lag order = 2, p-value = 0.4327
+alternative hypothesis: stationary
+```
+
+> The results above, with a p-value of 0.4327, suggest that the total annual gifts are not stationary. However, the results are not reliable since we have a small range of years in the dataset (from 2012 to 2020).
+
+We might also ask ourselves, is are the annual gifts changes stationary? To do so, we can do a Dickey-Fuller test. I do this in `dataExplorer.R`. I obtain the results below.
+
+```
+        Augmented Dickey-Fuller Test
+
+data:  df3$Total_Annual_Gifts_difference[-1]
+Dickey-Fuller = -2.4848, Lag order = 1, p-value = 0.3877
+alternative hypothesis: stationary
+```
+
+> The results above, with a p-value of 0.3877, suggest that the annual gifts changes are not stationary. However, the results are not reliable since we have a small range of years in the dataset (from 2012 to 2020).
+
+### Exploring Autocorrelation (for Total Annual Gifts)
+
+We might ask ourselves, is there autocorrelation in the total annual gifts? To do so, we can do an autocorrelation plot. I do this in `dataExplorer.R`. I obtain the plot below.
+
+<!-- paste image with path: plots_dataExploration/plot13.png -->
+![Plot 13](/plots_dataExploration/plot13.png)
+
+> The plot above suggests that there is autocorrelation in the total annual gifts for the first lag.
+
+We might also ask ourselves, is there autocorrelation in the annual gifts changes? To do so, we can do an autocorrelation plot. I do this in `dataExplorer.R`. I obtain the plot below.
+
+<!-- paste image with path: plots_dataExploration/plot14.png -->
+![Plot 14](/plots_dataExploration/plot14.png)
+
+> The plot above suggests that there is autocorrelation in the annual gifts changes for the first lag.
 

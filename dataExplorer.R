@@ -74,3 +74,75 @@ plot(lead(df$Annual_Gifts, n = 1, order = df$Class), df$Annual_Gifts,
      ylab = "Annual Gifts ", 
      col = "blue", 
      pch = 20)
+
+
+
+# import library
+library(zoo)
+
+# plot a graph of total Annual_Gifts (this is the sum of all Annual_Gifts for which the year is the relevant yesar) by Year: from 2012 to 2021
+plot(df %>% group_by(Year) %>% summarise(Total_Annual_Gifts = sum(Annual_Gifts)), 
+     type = "l", 
+     col = "blue", 
+     lwd = 2, 
+     xlab = "Year", 
+     ylab = "Total Annual Gifts", 
+     main = "Total Annual Gifts")
+
+
+df3 <- df %>% group_by(Year) %>% summarise(Total_Annual_Gifts = sum(Annual_Gifts))
+
+# plot a rolling average of Annual_Gifts with a dashed line
+f1 <- rollapply(df3$Total_Annual_Gifts, width = 2, FUN = mean, align = "right", fill = NA)
+
+plot(df3, type = "l", col = "blue", lwd = 2, xlab = "Year", ylab = "Annual Gifts", main = "Annual Gifts")
+lines(f1, col = "red", lwd = 2, lty = 2)
+
+# We might ask ourselves, is the data stationary? To do so, we can do a Dickey-Fuller test. I do this in `dataExplorer.R`. However, we have a small range of years in the dataset (from 2012 to 2020), so the results are likely not to be reliable. So take the results from the Dickey-Fuller test with a grain of salt. I obtain the results below.
+
+# import library
+library(tseries)
+
+# set up a dataframe for the time series
+df3 <- df %>% group_by(Year) %>% summarise(Total_Annual_Gifts = sum(Annual_Gifts))
+
+# perform a Dickey-Fuller test
+adf.test(df3$Total_Annual_Gifts)
+
+# We might also ask ourselves, is are the annual gifts changes stationary? To do so, we can do a Dickey-Fuller test. I do this in `dataExplorer.R`. I obtain the results below.
+
+# import library
+library(tseries)
+
+# set up a dataframe for the time series
+df3 <- df %>% group_by(Year) %>% summarise(Total_Annual_Gifts = sum(Annual_Gifts))
+
+# sort the dataframe by Year, descending
+df3 <- df3[order(df3$Year), ]
+
+# add a column that is the difference between the current year's Annual_Gifts and the previous year's Annual_Gifts
+df3$Total_Annual_Gifts_difference <-  df3$Total_Annual_Gifts - lag(df3$Total_Annual_Gifts, n = 1, order = df3$Year) 
+
+# perform a Dickey-Fuller test. Drop the first row, which is NA
+adf.test(df3$Total_Annual_Gifts_difference[-1])
+
+
+# We might ask ourselves, is there autocorrelation in the total annual gifts? To do so, we can do an autocorrelation plot. I do this in `dataExplorer.R`. I obtain the plot below.
+
+# import library
+library(tseries)
+
+# set up a dataframe for the time series
+df3 <- df %>% group_by(Year) %>% summarise(Total_Annual_Gifts = sum(Annual_Gifts))
+
+# sort the dataframe by Year, descending
+df3 <- df3[order(df3$Year), ]
+
+# add a column that is the difference between the current year's Annual_Gifts and the previous year's Annual_Gifts
+df3$Total_Annual_Gifts_difference <-  df3$Total_Annual_Gifts - lag(df3$Total_Annual_Gifts, n = 1, order = df3$Year)
+
+# plot an autocorrelation plot of annual gifts (not the difference)
+acf(df3$Total_Annual_Gifts, main = "Autocorrelation Plot of Total Annual Gifts")
+
+# plot an autocorrelation plot of annual gifts (the difference)
+acf(df3$Total_Annual_Gifts_difference[-1], main = "Autocorrelation Plot of Total Annual Gifts Difference")
