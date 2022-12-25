@@ -30,6 +30,8 @@ hist(df$Annual_Gifts_1Y_difference[!is.na(df$Annual_Gifts_1Y_difference)],
      col = "blue", 
      breaks = 20)
 
+# We might ask ourselves, how can we predict future Annual Gifts changes? A naive approach would be to predict a year's Annual Gifts changes using the previous year's Annual Gifts changes. I plot a scatterplot of the previous year's Annual Gifts changes against the current year's Annual Gifts changes. I obtain the scatterplot below. I do this in `dataExplorer.R`.
+
 # plot a scatterplot of Annual_Gifts_1Y_difference vs. Annual_Gifts_1Y_difference for the previous year
 plot(lead(df$Annual_Gifts_1Y_difference, n = 1, order = df$Class), df$Annual_Gifts_1Y_difference, 
      main = "Annual Gifts 1 Year Difference vs. Annual Gifts 1 Year Difference for the Previous Year", 
@@ -62,3 +64,13 @@ plot(df2$Annual_Gifts_1Y_difference_previous, df2$Annual_Gifts_1Y_difference,
      pch = 20)
 
 
+
+# We might also ask ourselves, how can we predict future Annual Gifts? A naive approach would be to predict a year's Annual Gifts using the previous year's Annual Gifts. I plot a scatterplot of the previous year's Annual Gifts against the current year's Annual Gifts. I obtain the scatterplot below.
+
+# plot a scatterplot of Annual_Gifts vs. Annual_Gifts for the previous year
+plot(lead(df$Annual_Gifts, n = 1, order = df$Class), df$Annual_Gifts, 
+     main = "Annual Gifts vs. Annual Gifts for the Previous Year", 
+     xlab = "Annual Gifts for the Previous Year", 
+     ylab = "Annual Gifts ", 
+     col = "blue", 
+     pch = 20)
