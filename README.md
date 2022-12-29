@@ -189,3 +189,7 @@ Residual standard error: 14120 on 38 degrees of freedom
 Multiple R-squared:  0.4032,    Adjusted R-squared:  0.3718 
 F-statistic: 12.84 on 2 and 38 DF,  p-value: 5.501e-05
 ```
+
+What if I plot all the classes (excluding 2017)? I obtain the regression output below.
+
+TODO
