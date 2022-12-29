@@ -146,3 +146,22 @@ acf(df3$Total_Annual_Gifts, main = "Autocorrelation Plot of Total Annual Gifts")
 
 # plot an autocorrelation plot of annual gifts (the difference)
 acf(df3$Total_Annual_Gifts_difference[-1], main = "Autocorrelation Plot of Total Annual Gifts Difference")
+
+
+# We might ask ourselves, is there autocorrelation in the annual gifts (across all classes)? To do so, we can do an autocorrelation plot. I do this in `dataExplorer.R`. I obtain the plot below.
+acf(df$Annual_Gifts, main = "Autocorrelation Plot of Annual Gifts")
+
+# Create a list of the unique classes in the dataset
+classes <- unique(df$Class)
+
+# Iterate over the classes
+for (class in classes) {
+  # Subset the data to only include the current class
+  class_data <- df[df$Class == class, ]
+  
+  # Plot the autocorrelation of the Annual_Gifts column
+  acf(class_data$Annual_Gifts, lag.max = 20)
+  
+  # Add a title to the plot using the current class
+  title(paste("Autocorrelation of Annual Gifts for Class", class))
+}
