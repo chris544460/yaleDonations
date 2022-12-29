@@ -1,5 +1,11 @@
 # Yale Donations
 
+## Introduction
+
+Welcome to my exploration and analysis of alumni donations at Yale University. The goal of this project is to understand the factors that influence these donations and to identify opportunities for further analysis and improvement. Through my research, I have been able to uncover some interesting trends and patterns in the data, and I am excited to share my findings with you. I believe that this project has the potential to benefit both the university and its alumni community, and I am eager to continue exploring and analyzing the data to better understand these donations.
+
+## Purpose
+
 This is an exploration and analysis of Yale's Alumni Donations.
 
 The goal of this project is to:
@@ -10,9 +16,10 @@ The goal of this project is to:
 <!-- add a gif image with image address with size 5x5: https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fmagnifying-glass&psig=AOvVaw3QG9uAm-Fnb7_UecRkxHf3&ust=1671954255901000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPjM447hkfwCFQAAAAAdAAAAABAD-->
 ![Magnifying Glass](https://media2.giphy.com/media/42wQXwITfQbDGKqUP7/giphy.gif)
 
+## Summary of Findings and Recommendations
 
-
-
+Summary of Findings: 
+- I have observed that there is generally a positive correlation between years since graduation and gift amounts. This suggests that alumni are more likely to donate as they become more financially stable over time. The significance of this effect is not clear, however, and further analysis is needed to determine if this effect is statistically significant. -> do this now with a regression
 
 ## Preliminary Steps
 
@@ -144,3 +151,41 @@ We might also ask ourselves, is there autocorrelation in the annual gifts change
 
 > The plot above suggests that there is autocorrelation in the annual gifts changes for the first lag.
 
+## Data Analysis
+
+### Relationship between Annual Gifts and Years Since Graduation
+
+We recall the plot of the relationship between Annual Gifts and Years Since Graduation from the Data Exploration section above. Here it is below as a refresher:
+
+<!-- paste image with path: plots_dataExploration/plot9.png -->
+![Plot 9](/plots_dataExploration/plot9.png)
+
+Notice that I have excluded the class of 2017. This is because their Annual Gifts at their 0th year of graduation was anomalously higher than that of the rest of the classes since 2017. You can see this below:
+
+<!-- paste image with path: plots_dataExploration/plot15.png -->
+
+![Plot 15](/plots_dataExploration/plot15.png)
+
+So, I exclude the class of 2017 from the analysis of the relationship between Annual Gifts and Years Since Graduation (I want to find the underlying general relationship, so I exclude anomalies). 
+
+I fit a linear model to the relationship between Annual Gifts and Years Since Graduation. I control for the Class year. I only include classes from 2012 to 2021 (excluding 2017) because these are the classes for which I can plot years of graduation starting from zero. I do this in `dataAnalyser.R`. I obtain the results below.
+
+```
+lm(formula = Annual_Gifts ~ Years_Since_Graduation + Class, data = df2)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-19482  -8728  -5352   9294  43543 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            4255369.6  2170144.1   1.961 0.057254 .  
+Years_Since_Graduation    3451.4      934.2   3.694 0.000691 ***
+Class                    -2101.9     1076.8  -1.952 0.058332 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 14120 on 38 degrees of freedom
+Multiple R-squared:  0.4032,    Adjusted R-squared:  0.3718 
+F-statistic: 12.84 on 2 and 38 DF,  p-value: 5.501e-05
+```
