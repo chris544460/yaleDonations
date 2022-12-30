@@ -22,3 +22,9 @@ df2 <- df2 %>% filter(Class >= 2012 & Class <= 2021 & Class != 2017)
 reg <- lm(Annual_Gifts ~ Years_Since_Graduation + Class, data = df2)
 # print summary of regression
 summary(reg)
+
+# What if I plot all the classes (excluding 2017)? I obtain the regression output below.
+# run a regression of donation amount on years since graduation + Class. Use all Classes (excluding 2017).
+df3 <- df
+# convert class year to numeric, excluding errors (e.g. 1931-1939)
+df3$Class <- as.numeric(df3$Class, na.rm = TRUE)

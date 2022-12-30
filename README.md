@@ -190,6 +190,13 @@ Multiple R-squared:  0.4032,    Adjusted R-squared:  0.3718
 F-statistic: 12.84 on 2 and 38 DF,  p-value: 5.501e-05
 ```
 
-What if I plot all the classes (excluding 2017)? I obtain the regression output below.
+What if I plot all the classes? I do this in `visualizer_dataExploration.R`. I obtain the plot below.
+
+<!-- paste image with path: plots_dataExploration/plot16.png -->
+![Plot 16](/plots_dataExploration/plot16.png)
+
+Notice that the relationship between Annual Gifts and Years Since Graduation appears non-linear by eye. So, it is more appropriate to fit a non-linear model to the relationship between Annual Gifts and Years Since Graduation. There seems to be a positive relationship for the first 25-30 years since graduation. Also notice that at every 5-year interval (indicated by the dashed lines) there seems to be a jump in Annual Gifts. 
+
+```
 
 TODO
