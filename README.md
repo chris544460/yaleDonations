@@ -157,8 +157,8 @@ We might also ask ourselves, is there autocorrelation in the annual gifts change
 
 We recall the plot of the relationship between Annual Gifts and Years Since Graduation from the Data Exploration section above. Here it is below as a refresher:
 
-<!-- paste image with path: plots_dataExploration/plot4.png -->
-![Plot 4](/plots_dataExploration/plot4.png)
+<!-- paste image with path: plots_dataExploration/plot2.png -->
+![Plot 2](/plots_dataExploration/plot2.png)
 
 Notice that I have excluded the class of 2017. This is because their Annual Gifts at their 0th year of graduation was anomalously higher than that of the rest of the classes since 2017. You can see this below:
 
