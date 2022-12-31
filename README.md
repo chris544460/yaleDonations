@@ -19,8 +19,9 @@ The goal of this project is to:
 ## Summary of Findings and Recommendations 
 
 Summary of Findings: 
-- Total Gifts increased from 2012 until 2015 and remained approx. constant since then. 
-![Plot 1](/plots_dataExploration/plot1.png){width=50%}
+### Total Gifts increased from 2012 until 2015 and remained approx. constant since then. 
+<!-- ![Plot 1](/plots_dataExploration/plot1.png) but smaller -->
+![Plot 1](/plots_dataExploration/plot1.png)
 
 - Participation seems to be decreasing since 2012 overall.
 - For each year since 2012, the average class remains approx. below 0.5M in total gifts and 50% in participation. However, there are some "stellar classes". 
