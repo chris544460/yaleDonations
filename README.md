@@ -27,19 +27,23 @@ The goal of this project is to:
 ---
 ### 🔽 It looks like participation has been decreasing since 2012
 ---
-### Overall, the average class has had total gifts and participation around or below half a million dollars and 50% each year since 2012. But there have been some really impressive classes.
-#### The classes of 1951 and 1952 have the highest participation among classes that give between 0.2M and 0.5M in total gifts. On average, they give a lot more compared to other classes in that same gift range.
-#### The classes of 2017, 1959, 1962, 1963, 1966, 1956, 1952, and 1955 are the top eight classes in terms of giving more than 0.5M in total gifts and participating at a high rate (between 50% and 75%). These classes give more on average compared to others in the same participation range.
+### Overall, the average class has had total gifts and participation around or below half a million dollars and 50% each year since 2012. But there have been some really impressive classes
 ![Plot 6](/plots_dataExploration/plot6.gif)
 ---
-- We see that the distribution of annual gifts is right skewed. This is expected since we can expect higher-value gifts to be less frequent than lower-value gifts on average.
-- A (untested but observed) story that we can tell ourselves is that if the previous year's Annual Gifts changes were positive at high values, the current year's Annual Gifts changes will be negative at high values; if the previous year's Annual Gifts changes were around zero, the current year's Annual Gifts changes will be unchanged at worst; if the previous year's Annual Gifts changes were negative at high values, the current year's Annual Gifts changes will be around zero - therefore, the story is one where the Annual Gifts are at their mean / trend level, and if they enjoy a large increase, they will correct for this increase in the next year.
-<!-- scatter plot of 1 year difference agianst 1 year difference in previous year -->
-- There exists a statistically significant positive correlation between years since graduation and gift amounts for the first 10 years since graduation. 
--  There seems to be a positive relationship for the first 25-30 years since graduation. Afterwards, there seems to be a negative trend.
--  At every 5-year interval (indicated by the dashed lines) there seems to be a jump in Annual Gifts. 
-        - The largest jump appears to be at the 50th year since graduation. The next largest jump appear to be at 25th, 30th, and 35th years since graduation (not necessarily in that order).
-- Unlike the plot of Annual Gifts against Years Since graduation, there does not seem to exist a perceivable relationship between Participation and Years Since Graduation. However, after 50 years since graduation, there seems to be a slight positive relationship between Participation and Years Since Graduation. However, this does not control for time-related factors, so we would need more data to make a more informed decision. That is, datasets published in earlier years.
+#### The way the annual gifts are distributed looks like a right-skewed bell curve, with more lower-value gifts than high-value ones. This makes sense because it's probably more common for people to give smaller gifts than really expensive ones
+![Plot 9](/plots_dataExploration/plot9.png)
+---
+#### It seems like if the annual gifts went up a lot in value last year, they'll probably go down this year. If they stayed about the same as the year before, they'll probably stay about the same this year. But if the gifts went down in value last year, they'll probably go back up to their average or normal level this year. It's like the annual gifts are trying to balance out and stay around their average or normal amount from year to year
+![Plot 11](/plots_dataExploration/plot11.png)
+---
+#### It looks like the more time that has passed since someone graduated, the more they tend to give in annual gifts, at least for the first ten years. It seems like this trend continues for the first 25-30 years or so, but then it starts to go in the opposite direction and people start giving less. Every 5 years, it looks like there's a big increase in annual gifts, with the biggest jump happening at the 50-year mark. There are also some other big increases around the 25, 30, and 35-year marks
+![Plot 16](/plots_dataExploration/plot16.png)
+---
+#### It doesn't seem like there's a clear pattern between how long it's been since someone graduated and how likely they are to give in annual gifts. However, for people who graduated over 50 years ago, it looks like there might be a slight trend where they're more likely to give gifts as more time passes. But we can't say for sure without looking at data from earlier years, since other factors could be influencing the relationship.
+![Plot 17](/plots_dataExploration/plot17.png)
+
+
+
 
 
 
