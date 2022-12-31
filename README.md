@@ -18,7 +18,7 @@ The goal of this project is to:
 
 ## Summary of Findings and Recommendations 
 
-Summary of Findings: 
+---
 ### 🚀 The total gifts have gone up from 2012 until 2015, and since then they've stayed about the same.
 <!-- ![Plot 1](/plots_dataExploration/plot1.png) but smaller -->
 ![Plot 1](/plots_dataExploration/plot1.png)
