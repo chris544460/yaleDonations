@@ -16,10 +16,24 @@ The goal of this project is to:
 <!-- add a gif image with image address with size 5x5: https://www.google.com/url?sa=i&url=https%3A%2F%2Fgiphy.com%2Fexplore%2Fmagnifying-glass&psig=AOvVaw3QG9uAm-Fnb7_UecRkxHf3&ust=1671954255901000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCPjM447hkfwCFQAAAAAdAAAAABAD-->
 ![Magnifying Glass](https://media2.giphy.com/media/42wQXwITfQbDGKqUP7/giphy.gif)
 
-## Summary of Findings and Recommendations
+## Summary of Findings and Recommendations 
 
 Summary of Findings: 
-- I have observed that there is generally a positive correlation between years since graduation and gift amounts. This suggests that alumni are more likely to donate as they become more financially stable over time. The significance of this effect is not clear, however, and further analysis is needed to determine if this effect is statistically significant. -> do this now with a regression
+- Total Gifts increased from 2012 until 2015 and remained approx. constant since then. 
+- Participation seems to be decreasing since 2012 overall.
+- For each year since 2012, the average class remains approx. below 0.5M in total gifts and 50% in participation. However, there are some "stellar classes". 
+        - The classes of 1951 and 1952 are the top two classes that spend between 0.2M and 0.5M in total gifts and over 75% in participation. That is, on average, they participate a lot more than other classes given their gift range.
+        - The classes of 2017, 1959, 1962, 1963, 1966, 1956, 1952, and 1955 are the top eight classes that spend over 0.5M in total gifts and between 50% and 75% in participation. That is, on average, they give a lot more than other classes given their (high) participation range.
+- There exists a statistically significant positive correlation between years since graduation and gift amounts for the first 10 years since graduation. 
+-  There seems to be a positive relationship for the first 25-30 years since graduation. Afterwards, there seems to be a negative trend.
+-  At every 5-year interval (indicated by the dashed lines) there seems to be a jump in Annual Gifts. 
+        - The largest jump appears to be at the 50th year since graduation. The next largest jump appear to be at 25th, 30th, and 35th years since graduation (not necessarily in that order).
+- Unlike the plot of Annual Gifts against Years Since graduation, there does not seem to exist a perceivable relationship between Participation and Years Since Graduation. However, after 50 years since graduation, there seems to be a slight positive relationship between Participation and Years Since Graduation. However, this does not control for time-related factors, so we would need more data to make a more informed decision. That is, datasets published in earlier years.
+
+
+
+
+
 
 ## Preliminary Steps
 
@@ -72,6 +86,10 @@ First, I try to explore the data with naive, introductory plots:
 <!-- paste image with path: plots_dataExploration/plot8.png -->
 ![Plot 8](/plots_dataExploration/plot8.png)
 > We don't see one class spending too much time in the _Mass Affluent and Lowest Participation Rate_ quadrant. But, at some point, many classes have spent some time in this quadrant.
+<!--  paste image with path: plots_dataExploration/plot18.png -->
+![Plot 18](/plots_dataExploration/plot18.png)
+> We find that the 2017, 1959, 1962, 1963, 1966, 1956, 1953, 1955 are the ones that spend the most time in the _Affluent and Highest Participation Rate_ quadrant.
+
 - Gifts by Year for each class, normalized by the number of alumni in that class / participation rate of the class
 
 Ok, that was the initial exploration. Now, let's try to explore the data with more useful plots (or at least potentially more useful plots from a statistical perspective).
@@ -197,6 +215,12 @@ What if I plot all the classes? I do this in `visualizer_dataExploration.R`. I o
 
 Notice that the relationship between Annual Gifts and Years Since Graduation appears non-linear by eye. So, it is more appropriate to fit a non-linear model to the relationship between Annual Gifts and Years Since Graduation. There seems to be a positive relationship for the first 25-30 years since graduation. Also notice that at every 5-year interval (indicated by the dashed lines) there seems to be a jump in Annual Gifts. 
 
-```
 
-TODO
+### Relationship between Participation and Years Since Graduation
+
+Below is a plot of the relationship between Participation and Years Since Graduation. I do this in `visualizer_dataExploration.R`. I obtain the plot below.
+
+<!-- paste image with path: plots_dataExploration/plot17.png -->
+![Plot 17](/plots_dataExploration/plot17.png)
+
+Unlike the plot of Annual Gifts against Years Since graduation, there does not seem to exist a strong, perceivable positive or negative relationship between Participation and Years Since Graduation. However, after 50 years since graduation, there seems to be a slight positive relationship between Participation and Years Since Graduation. However, this does not control for time-related factors, so we would need more data to make a more informed decision. That is, datasets published in earlier years.
