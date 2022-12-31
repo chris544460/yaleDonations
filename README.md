@@ -20,10 +20,16 @@ The goal of this project is to:
 
 Summary of Findings: 
 - Total Gifts increased from 2012 until 2015 and remained approx. constant since then. 
+![Plot 1](/plots_dataExploration/plot1.png)
+
 - Participation seems to be decreasing since 2012 overall.
 - For each year since 2012, the average class remains approx. below 0.5M in total gifts and 50% in participation. However, there are some "stellar classes". 
         - The classes of 1951 and 1952 are the top two classes that spend between 0.2M and 0.5M in total gifts and over 75% in participation. That is, on average, they participate a lot more than other classes given their gift range.
         - The classes of 2017, 1959, 1962, 1963, 1966, 1956, 1952, and 1955 are the top eight classes that spend over 0.5M in total gifts and between 50% and 75% in participation. That is, on average, they give a lot more than other classes given their (high) participation range.
+<!-- graph of participation vs Annual Gifts (gif) -->
+- We see that the distribution of annual gifts is right skewed. This is expected since we can expect higher-value gifts to be less frequent than lower-value gifts on average.
+- A (untested but observed) story that we can tell ourselves is that if the previous year's Annual Gifts changes were positive at high values, the current year's Annual Gifts changes will be negative at high values; if the previous year's Annual Gifts changes were around zero, the current year's Annual Gifts changes will be unchanged at worst; if the previous year's Annual Gifts changes were negative at high values, the current year's Annual Gifts changes will be around zero - therefore, the story is one where the Annual Gifts are at their mean / trend level, and if they enjoy a large increase, they will correct for this increase in the next year.
+<!-- scatter plot of 1 year difference agianst 1 year difference in previous year -->
 - There exists a statistically significant positive correlation between years since graduation and gift amounts for the first 10 years since graduation. 
 -  There seems to be a positive relationship for the first 25-30 years since graduation. Afterwards, there seems to be a negative trend.
 -  At every 5-year interval (indicated by the dashed lines) there seems to be a jump in Annual Gifts. 
