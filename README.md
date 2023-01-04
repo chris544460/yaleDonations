@@ -25,7 +25,7 @@ The goal of this project is to:
 
 <!-- add a horizontal line -->
 ---
-### 🔽 It looks like participation has been decreasing since 2012
+### 🔽 It looks like total participation has been decreasing since 2012
 ---
 ### ⭐️ Overall, the average class has had total gifts and participation around or below half a million dollars and 50% each year since 2012. But there have been some really impressive classes
 ![Plot 6](/plots_dataExploration/plot6.gif)
